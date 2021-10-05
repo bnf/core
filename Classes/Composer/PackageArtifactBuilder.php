@@ -142,6 +142,7 @@ class PackageArtifactBuilder extends PackageManager implements InstallerScript
                     // In case we can not determine the extension key, we take the composer name
                     $extensionKey = $composerPackage->getName();
                 }
+                $this->composerNameToPackageKeyMap[$composerPackage->getName()] = $extensionKey;
                 if ($composerPackage === $rootPackage) {
                     return $this->handleRootPackage($rootPackage, $extensionKey);
                 }
